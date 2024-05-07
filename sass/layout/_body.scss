@@ -1,0 +1,121 @@
+main {
+    display: relative;
+    nav:nth-of-type(1){
+    margin-bottom: 38px;
+    }
+    .statistics-mobile {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        
+        .img-woman-cafe-mobile {
+            max-width: 100%;
+            height: auto;
+            
+        }
+        div {
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgb(158, 158, 158);
+            display: inline-flex;
+            position: relative;
+            flex-direction: column;
+            padding: 20px;
+            position: absolute;
+            
+            background-color: white;
+            p.titles{
+                color: $grey;
+                font-size: $body-s;
+            }
+            p.numbers{
+                color: $dark-blue;
+                font-size: $heading-m;
+            }
+        }
+        div:nth-of-type(1){
+            top: 0px;
+            right: 0px;
+        }
+        div:nth-of-type(2){
+            bottom: 0px;
+            left: 0px;
+        }
+    }
+    .statistics-mobile{
+        display: none;
+    }
+    .services {
+        margin-top: 66px;
+        display: grid;
+        margin-bottom: 10%;
+        h2 {
+            background-image: $gradient-orange-pink;
+            border-radius: 10px;
+            color: white;
+            padding: 24px 30px;
+        }
+        article {
+            padding: 30px;
+            img {
+                margin-top: 16px;
+            }
+            h3 {
+                margin-top: 24px;
+                font-size: $heading-s;
+            }
+            p {
+                margin-top: 16px;
+                font-size: $body-s;
+                color: $grey;
+                text-align: justify;
+            }
+            a {
+                margin-top: 24px;
+                color: $dark-pink;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    main, footer {
+        padding: 16px;
+    }
+    section.statistics-mobile {
+        display:flex;
+        justify-content: center;
+    }
+    .img-woman-cafe-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 768px){
+    main {
+        padding: 0px 40px;
+    }
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        h2, article {
+            background-color: white;
+            box-shadow: 5px 5px 5px $shadow;
+            border-radius: 10px;
+        }
+    }
+    
+}
+
+@media (min-width: 1200px){
+    main {
+        padding: 0px 165px;
+    }
+    .presentation {
+        display: flex;
+        flex-direction: column;
+    }
+    .services {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0px 15%;
+    }
+}

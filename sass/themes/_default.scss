@@ -1,0 +1,17 @@
+html * {
+    font-family: $PlusJakartaSans;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+}
+
+p {
+    display: inline-block;
+}

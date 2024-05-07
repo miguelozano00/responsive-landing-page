@@ -1,0 +1,33 @@
+.button {
+    color: white;
+    border: none;
+    padding: 20px 20px;
+    border-radius: 30px;
+    display: inline;
+    width: 140px;
+    text-align: center;
+}
+
+.button-dark-blue {
+    background-color: $dark-blue;
+}
+
+.button-dark-blue:hover {
+    background-color: $grey-violet;
+}
+
+.button-gradient-orange-pink {
+    background-image: $gradient-orange-pink;
+}
+
+.button-gradient-orange-pink:hover {
+    opacity: 0.8;
+}
+
+.button-gradient-blue-pink {
+    background-image: $gradient-blue-pink;
+}
+
+.button-gradient-blue-pink:hover {
+    opacity: 0.8;
+}
