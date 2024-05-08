@@ -1,27 +1,79 @@
+body {
+    @include breakpoint(tablet){
+        background-image: url(../../img/hero-img.png);
+        background-repeat: no-repeat;
+        background-position: 110% 5%;
+        background-size: 400px;
+    }
+    @include breakpoint(desktop){
+        padding: 0px 150px;
+        background-position: 100% -4%;
+        background-size: 580px;
+    }
+}
+
 main {
     display: relative;
-    nav:nth-of-type(1){
-    margin-bottom: 38px;
+    padding: 16px;
+    .presentation {
+        display: flex;
+        flex-direction: column;
+        grid-area: text;
+        h1 {
+            margin-bottom: 26px;
+            font-size: $heading-l;
+        }
+        p {
+            margin-bottom: 24px;
+        }
+        a {
+            margin-bottom: 46px;
+        }
+        @include breakpoint(tablet){
+            width: 50%;
+            position: relative;
+            top: 60px;
+            left: 20px;
+        }
+        @include breakpoint(desktopxl){
+            h1{
+                font-size: $heading-xl;
+            }
+            position: relative;
+            top: 60px;
+            left: 50px;
+        }
+        
     }
-    .statistics-mobile {
+    .statistics {
         display: flex;
         position: relative;
         justify-content: center;
+        display:flex;
+        justify-content: center;
+        @include breakpoint(tablet){
+            .img-woman-cafe-mobile {
+                display: none;
+            }
+            margin-top: 50px;
+        }
+        @include breakpoint(desktop){
+            margin-top: 230px;
+        }
         
+        // Responsive properties for img mobile
         .img-woman-cafe-mobile {
             max-width: 100%;
             height: auto;
-            
         }
-        div {
+
+        .members, .course-hours {
             border-radius: 10px;
             box-shadow: 3px 3px 15px rgb(158, 158, 158);
             display: inline-flex;
-            position: relative;
             flex-direction: column;
             padding: 20px;
             position: absolute;
-            
             background-color: white;
             p.titles{
                 color: $grey;
@@ -32,35 +84,69 @@ main {
                 font-size: $heading-m;
             }
         }
-        div:nth-of-type(1){
+
+        .members{
             top: 0px;
             right: 0px;
+            @include breakpoint(tablet){
+                top: -400px;
+                right: 30px;
+            }
+            @include breakpoint(desktop){
+                top: -560px;
+                right: 15px;
+            }
+            @include breakpoint(desktopxl){
+                top: -600px;
+                right: 15px;
+            }
         }
-        div:nth-of-type(2){
+
+        .course-hours{
             bottom: 0px;
             left: 0px;
+            @include breakpoint(tablet){
+                bottom: -10px;
+                right: 200px;
+                left: auto; // Null left value
+            }
+            @include breakpoint(desktop){
+                bottom: 70px;
+                right: 280px;
+            }
+            @include breakpoint(desktopxl){
+                bottom: 70px;
+                right: 280px;
+            }
         }
+
     }
-    .statistics-mobile{
-        display: none;
-    }
+
     .services {
         margin-top: 66px;
         display: grid;
+        gap: 50px;
         margin-bottom: 10%;
+        position: relative;
         h2 {
             background-image: $gradient-orange-pink;
             border-radius: 10px;
             color: white;
             padding: 24px 30px;
         }
-        article {
+            
+        img {
+            position: absolute;
+            top: -30px;
+            padding-left: 0px;
+        }
+        .article-content {
             padding: 30px;
-            img {
-                margin-top: 16px;
-            }
+            border-radius: 10px;
+            background-color: white;
+            position: relative;
             h3 {
-                margin-top: 24px;
+                margin-top: 20px;
                 font-size: $heading-s;
             }
             p {
@@ -68,54 +154,27 @@ main {
                 font-size: $body-s;
                 color: $grey;
                 text-align: justify;
+                margin-bottom: 30px;
             }
             a {
                 margin-top: 24px;
                 color: $dark-pink;
+                position: absolute;
+                bottom: 20px;
+                left: 30px;
             }
         }
-    }
-}
-
-@media (max-width: 768px){
-    main, footer {
-        padding: 16px;
-    }
-    section.statistics-mobile {
-        display:flex;
-        justify-content: center;
-    }
-    .img-woman-cafe-desktop {
-        display: none;
-    }
-}
-
-@media (min-width: 768px){
-    main {
-        padding: 0px 40px;
-    }
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        h2, article {
-            background-color: white;
-            box-shadow: 5px 5px 5px $shadow;
-            border-radius: 10px;
+            
+        @include breakpoint(tablet){
+            grid-template-columns: repeat(2, 1fr);
         }
-    }
-    
-}
-
-@media (min-width: 1200px){
-    main {
-        padding: 0px 165px;
-    }
-    .presentation {
-        display: flex;
-        flex-direction: column;
-    }
-    .services {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0px 15%;
+        @include breakpoint(desktop){
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        @include breakpoint(desktopxl){
+            margin-top: 100px;
+        }
+        
     }
 }
